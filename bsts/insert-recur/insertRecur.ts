@@ -4,11 +4,13 @@ import { BNode, BSTNum } from "../common/bst";
  * Uses recursion. */
 
 function insertRecur(bst: BSTNum, val: number): void {
+  // If no root, no need to search
   if (!bst.root) {
     bst.root = new BNode(val);
     return;
   }
 
+  // If inserting dups, return;
   if (bst.root.val === val) return;
 
   if (val < bst.root.val) {
