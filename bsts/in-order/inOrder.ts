@@ -1,4 +1,4 @@
-import { aC } from "vitest/dist/reporters-yx5ZTtEV";
+
 import { BNodeNum } from "../common/bst";
 
 /** inOrder(): Traverse from the invoking node using in-order DFS.
@@ -28,9 +28,9 @@ function inOrderAccum(
 
   if (node === null) return accum;
 
-  if (node.left !== null) accum.push(...inOrder(node.left));
+  if (node.left !== null) inOrderAccum(node.left, accum);
   accum.push(node.val);
-  if (node.right !== null) accum.push(...inOrder(node.right));
+  if (node.right !== null) inOrderAccum(node.right, accum);
 
   return accum;
 }
